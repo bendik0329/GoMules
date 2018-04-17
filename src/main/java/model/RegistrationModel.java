@@ -109,5 +109,4 @@ public class RegistrationModel {
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-
 }
