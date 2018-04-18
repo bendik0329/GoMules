@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
@@ -20,5 +22,14 @@ public class RegistrationManagerImpl implements RegistrationManager {
 	public int Register(RegistrationModel regModel) {
 		
 		return regisDAO.Register(regModel);
+			
 	}
+	
+	
+	//Method to log into GoMules.
+		@Override
+		public List<RegistrationModel> Login(RegistrationModel loginModel) {
+			
+			return regisDAO.Login(loginModel);
+		}
 }
