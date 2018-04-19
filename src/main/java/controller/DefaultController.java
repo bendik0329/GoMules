@@ -30,11 +30,17 @@ public class DefaultController {
 	public ModelAndView login(@ModelAttribute RegistrationModel loginModel) {
 		List<RegistrationModel> logindetails = registrationManager.Login(loginModel);
 
+		ModelAndView model=new ModelAndView();
 		if (logindetails.size() > 0) {
-			
-			return new ModelAndView("ridePostings", "loginDetails", logindetails);
+			model.addObject("loginDetails",logindetails);
+			model.setViewName("ridePostings");
+			return model;
 		} else {
-			return new ModelAndView("login", "loginModel", new RegistrationModel());
+			
+			model.addObject("loginModel",new RegistrationModel());
+			model.addObject("loginFailed",true);
+			model.setViewName("login");
 		}
+		return model;
 	}
 }

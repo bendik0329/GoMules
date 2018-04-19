@@ -35,7 +35,7 @@ public class RegistrationController {
 		}
 		else
 		{
-			model.addObject("message", false);
+			model.addObject("message", true);
 			model.setViewName("registration");
 		}
 
@@ -53,6 +53,7 @@ public class RegistrationController {
 		model.addAttribute("RegistrationModel", new RegistrationModel());
 		return "registration";
 	}
+	
 
 	/*
 	 * @RequestMapping(value="/dashboard",method=RequestMethod.GET) public String
